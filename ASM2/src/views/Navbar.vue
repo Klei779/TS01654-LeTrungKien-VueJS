@@ -93,9 +93,9 @@
                                 </router-link>
                             </li>
 
-                            <li v-if="!user">
+                            <li>
                                 <router-link class="dropdown-item" to="/forgot-password">
-                                    Quên mật khẩu
+                                    Thông tin cá nhân
                                 </router-link>
                             </li>
 
@@ -105,7 +105,10 @@
                                 </button>
                             </li>
 
+
+
                         </ul>
+
                     </li>
 
                 </ul>
@@ -121,20 +124,16 @@ import { getCurrentUser, logout } from '@/services/auth'
 
 const router = useRouter()
 
-// ✅ user PHẢI là ref
 const user = ref(getCurrentUser())
 
-// ✅ hàm cập nhật user khi auth thay đổi
 const updateUser = () => {
     user.value = getCurrentUser()
 }
 
-// ✅ lắng nghe sự kiện đăng nhập / đăng xuất
 onMounted(() => {
     window.addEventListener('auth-changed', updateUser)
 })
 
-// ✅ dọn dẹp
 onBeforeUnmount(() => {
     window.removeEventListener('auth-changed', updateUser)
 })

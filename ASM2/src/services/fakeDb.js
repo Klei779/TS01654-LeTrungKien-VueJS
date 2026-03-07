@@ -20,6 +20,14 @@ export const users = [
     password: '123456',
     name: 'Lê Đình Hiếu',
     role: 'user'
+  },
+
+    {
+    id: 'U004',
+    email: 'tqBinh@gmail.com',
+    password: '123456',
+    name: 'Trần Quang Bình',
+    role: 'user'
   }
 ]
 

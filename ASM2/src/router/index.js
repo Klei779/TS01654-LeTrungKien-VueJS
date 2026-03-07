@@ -5,6 +5,7 @@ import Home from '@/views/Home.vue'
 import Post from '@/views/post/Post.vue'
 import PostHistory from '@/views/post/PostHistory.vue'
 import PostCreate from '@/views/post/PostCreate.vue'
+import ProfileView from '@/views/account/ProfileView.vue'
 
 // account
 import AccountLogin from '@/views/account/AccountLogin.vue'
@@ -49,6 +50,12 @@ const routes = [
   {
     path: '/favorites',
     component: PostFavorite
+  },
+
+    {
+    path: '/forgot-password',
+    component: ProfileView,
+    meta: { requiresAuth: true }
   }
 
 ]
